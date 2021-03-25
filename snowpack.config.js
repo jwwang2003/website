@@ -1,3 +1,5 @@
+const BrotliPlugin = require('brotli-webpack-plugin');
+
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
@@ -8,10 +10,22 @@ module.exports = {
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-typescript',
+    ['@snowpack/plugin-webpack',
+    {
+      extendConfig: (config) => {
+        config.plugins.push(new BrotliPlugin({
+          asset: '[path].br[query]',
+          test: /\.js$|\.css$|\.html$/,
+          threshold: 10240,
+          minRatio: 0.8
+          }));
+        return config;
+      }
+    }],
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
-    // {"match": "routes", "src": ".*", "dest": "/index.html"},
+    {"match": "routes", "src": ".*", "dest": "/index.html"},
   ],
   optimize: {
     /* Example: Bundle your final build: */

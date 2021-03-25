@@ -1,0 +1,1 @@
+export default "/dist/static/me2.jpg";

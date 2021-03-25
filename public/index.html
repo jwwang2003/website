@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/"/>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web site created using create-snowpack-app" />
-    <title>Snowpack App</title>
+    <meta name="description" content="Jun Wei Wang's personal website" />
+    <title>JW</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    
   </head>
   <body>
+    <canvas style="position: absolute; top:0; left: 0; z-index: -1; height: 100%; width: 100%;" id="canvas"></canvas>
     <div id="root"></div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <script type="module" src="/dist/index.js"></script>
@@ -21,5 +30,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="fancyBG.js"></script>
   </body>
 </html>
