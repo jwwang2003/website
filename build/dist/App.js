@@ -16,6 +16,7 @@ import HOME from "./Pages/Home.js";
 import RESUME from "./Pages/Resume.js";
 import BLOG from "./Pages/Blog.js";
 import PROJECTS from "./Pages/Projects.js";
+import POST from "./Pages/Post.js";
 import image from "./static/me1.jpg.proxy.js";
 import "./App.css.proxy.js";
 const names = ["Jimmy Wang", "Jun Wei Wang", "王俊崴"];
@@ -113,6 +114,9 @@ function App({}) {
   }), /* @__PURE__ */ React.createElement(Route, {
     path: "/resume",
     render: Resume
+  }), /* @__PURE__ */ React.createElement(Route, {
+    path: "/post",
+    component: () => /* @__PURE__ */ React.createElement(Post, null)
   }))))));
 }
 const style = {
@@ -124,6 +128,11 @@ const style = {
   width: "100%",
   height: "100%"
 };
+function Post() {
+  return /* @__PURE__ */ React.createElement("div", {
+    style: {...style}
+  }, /* @__PURE__ */ React.createElement(POST, null));
+}
 function Home() {
   return /* @__PURE__ */ React.createElement("div", {
     style: {...style}

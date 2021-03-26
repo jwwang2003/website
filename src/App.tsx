@@ -18,6 +18,7 @@ import HOME from './Pages/Home';
 import RESUME from './Pages/Resume';
 import BLOG from './Pages/Blog';
 import PROJECTS from './Pages/Projects';
+import POST from './Pages/Post';
 import image from './static/me1.jpg';
 import './App.css';
 
@@ -113,6 +114,7 @@ function App({}: AppProps) {
               <Route path="/blog" render={Blog} />
               <Route path="/projects" render={Projects} />
               <Route path="/resume" render={Resume} />
+              <Route path="/post" component={() => <Post />} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
@@ -130,6 +132,14 @@ const style: CSS.Properties = {
   width: '100%',
   height: '100%'
 };
+
+function Post() {
+  return (
+    <div style={{ ...style }}>
+      <POST />
+    </div>
+  );
+}
 
 function Home() {
   return (

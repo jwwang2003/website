@@ -1,4 +1,5 @@
 const BrotliPlugin = require('brotli-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
@@ -13,12 +14,15 @@ module.exports = {
     ['@snowpack/plugin-webpack',
     {
       extendConfig: (config) => {
-        config.plugins.push(new BrotliPlugin({
-          asset: '[path].br[query]',
-          test: /\.js$|\.css$|\.html$/,
-          threshold: 10240,
-          minRatio: 0.8
-          }));
+        config.plugins.push(
+          new BrotliPlugin({
+            asset: '[path].br[query]',
+            test: /\.js$|\.css$|\.html$/,
+            threshold: 10240,
+            minRatio: 0.8
+            }),
+          new BundleAnalyzerPlugin()
+          );
         return config;
       }
     }],

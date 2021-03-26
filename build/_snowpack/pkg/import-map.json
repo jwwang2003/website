@@ -5,8 +5,11 @@
     "react-bootstrap": "./react-bootstrap.js",
     "react-dom": "./react-dom.js",
     "react-i18next": "./react-i18next.js",
+    "react-markdown": "./react-markdown.js",
     "react-query": "./react-query.js",
     "react-router-dom": "./react-router-dom.js",
+    "react-syntax-highlighter": "./react-syntax-highlighter.js",
+    "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus": "./react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus.js",
     "react-transition-group": "./react-transition-group.js"
   }
 }
